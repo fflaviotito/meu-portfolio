@@ -1,5 +1,7 @@
+import type { JSX } from 'react'
+
 export interface IPageSections {
     id: string,
     label: string,
-    component?: string
+    component?: JSX.Element
 }

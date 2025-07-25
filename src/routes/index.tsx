@@ -1,6 +1,6 @@
-import type { IPageSections } from '../types/iPageSections'
+import type { IPageSections } from '../types/IPageSections'
 import { Route, Routes } from 'react-router-dom'
-import HomePage from '../pages/Home'
+import HomePage from '../pages/HomePage'
 import ProjectPage from '../pages/Project'
 
 interface AppRoutesProps {

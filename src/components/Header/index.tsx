@@ -1,5 +1,6 @@
-import type { IPageSections } from '../../types/iPageSections'
-import { HeaderContainer, HeaderContent } from './styles'
+import { Container } from '../../styles/Container'
+import type { IPageSections } from '../../types/IPageSections'
+import { HeaderContent } from './styles'
 
 interface HeaderProps {
     menuOptions: IPageSections[]
@@ -7,16 +8,20 @@ interface HeaderProps {
 
 const Header = ({ menuOptions }: HeaderProps) => {
     return (
-        <HeaderContainer>
+        <Container $variant='header'>
             <HeaderContent>
                 <h1>Logo do Portifólio</h1>
                 <nav>
                     <ul>
-                        {menuOptions.map(option => <li key={option.id}><a href={`#${option.id}`}>{option.label}</a></li>)}
+                        {menuOptions.map(option => 
+                            <li key={option.id}>
+                                <a href={`#${option.id}`}>{option.label}</a>
+                            </li>
+                        )}
                     </ul>
                 </nav>
             </HeaderContent>
-        </HeaderContainer>
+        </Container>
     )
 }
 

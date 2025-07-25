@@ -10,6 +10,7 @@ export const theme = {
     },
     layout: {
         header: '#D4E4EA',
+        main: '#F9F9F9',
         footer: '#D4E4EA',
     },
     fontSizes: {
