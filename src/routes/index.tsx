@@ -1,10 +1,10 @@
-import type { IPageSections } from '../types/IPageSections'
+import type { ILinkNav } from '../types/ILinkNav'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import ProjectPage from '../pages/Project'
 
 interface AppRoutesProps {
-    pageSections: IPageSections[]
+    pageSections: ILinkNav[]
 }
 
 const AppRoutes = ({ pageSections }: AppRoutesProps) => {

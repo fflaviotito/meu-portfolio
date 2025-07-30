@@ -6,7 +6,11 @@ interface ContainerProps {
 
 export const Container = styled.div.attrs<ContainerProps>(({ $variant }) => ({ as: $variant}))`
     width: 100%;
-    padding: ${({ theme }) => theme.spacing.xl};
+    padding: ${({ theme }) => theme.spacing.md};
+
+    @media (min-width: 400px) {
+        padding: ${({ theme }) => theme.spacing.xl};
+    }
 
     ${({ $variant, theme }) => $variant === 'header' && css`
         background-color: ${theme.layout.header};
@@ -19,4 +23,9 @@ export const Container = styled.div.attrs<ContainerProps>(({ $variant }) => ({ a
     ${({ $variant, theme }) => $variant === 'footer' && css`
         background-color: ${theme.layout.footer};
     `}
+`
+
+export const Content = styled.section`
+    max-width: 1000px;
+    margin: auto;
 `

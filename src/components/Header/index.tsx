@@ -1,25 +1,22 @@
+import type { ILinkNav } from '../../types/ILinkNav'
 import { Container } from '../../styles/Container'
-import type { IPageSections } from '../../types/IPageSections'
+import Nav from '../Nav'
 import { HeaderContent } from './styles'
 
 interface HeaderProps {
-    menuOptions: IPageSections[]
+    listLinks: ILinkNav[]
 }
 
-const Header = ({ menuOptions }: HeaderProps) => {
+const Header = ({ listLinks }: HeaderProps) => {
     return (
         <Container $variant='header'>
             <HeaderContent>
                 <h1>Logo do Portifólio</h1>
-                <nav>
-                    <ul>
-                        {menuOptions.map(option => 
-                            <li key={option.id}>
-                                <a href={`#${option.id}`}>{option.label}</a>
-                            </li>
-                        )}
-                    </ul>
-                </nav>
+                <Nav
+                    ariaLabel='Menu de navegação'
+                    listLinks={listLinks}
+                    variant='header'
+                />
             </HeaderContent>
         </Container>
     )
