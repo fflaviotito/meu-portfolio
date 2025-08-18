@@ -5,7 +5,9 @@ const Skills = () => {
         <>
             <ul>
                 {skillsData.map(skill =>
-                    <li key={skill.id}>{skill.label}</li>
+                    <li key={skill.id}>
+                        <img title={skill.label} src={skill.icon} alt="" />
+                    </li>
                 )}
             </ul>
         </>
