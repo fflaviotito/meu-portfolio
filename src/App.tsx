@@ -1,9 +1,9 @@
 import type { ILinkNav } from './types/ILinkNav'
-import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header'
-import AppRoutes from './routes'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
+
+import { Container, Content } from './styles/Container'
 
 const pageSections: ILinkNav[] = [
   {
@@ -36,10 +36,14 @@ const pageSections: ILinkNav[] = [
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header listLinks={pageSections}/>
-      <AppRoutes pageSections={pageSections} />
-    </BrowserRouter>
+      <Container $variant='main'>
+          {pageSections.map(section => 
+              <Content id={section.id} key={section.id}>{section.component}</Content>)
+          }
+      </Container>
+    </>
   )
 }
 
